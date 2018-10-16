@@ -1,0 +1,14 @@
+{
+  "namespace": "typeaheadcomponent",
+  "fsNamespace": "typeaheadcomponent",
+  "loader": "../typeaheadcomponent.js",
+  "core": "typeaheadcomponent.a0ffnjhb.js",
+  "corePolyfilled": "typeaheadcomponent.fnaj8kq7.js",
+  "components": {
+    "typeahead-component": {
+      "bundleIds": {
+        "$": "36w2csri"
+      }
+    }
+  }
+}

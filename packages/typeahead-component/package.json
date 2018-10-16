@@ -1,0 +1,39 @@
+{
+  "name": "typeahead-component",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build --prerender && npm run copy_in_geoservice",
+    "copy_in_geoservice": "cpr www ../geoservice/src/public -o",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll"
+  },
+  "dependencies": {
+    "@types/joi": "^13.6.0",
+    "joi": "^13.7.0",
+    "joi-browser": "^13.4.0"
+  },
+  "devDependencies": {
+    "@stencil/core": "~0.13.2",
+    "cpr": "^3.0.1",
+    "workbox-build": "3.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/stencil-component-starter.git"
+  },
+  "author": "Ionic Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ionic-team/stencil"
+  },
+  "homepage": "https://github.com/ionic-team/stencil"
+}
