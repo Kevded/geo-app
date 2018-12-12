@@ -2,14 +2,12 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'typeaheadcomponent',
-  outputTargets:[
+  outputTargets: [
     {
       type: 'www',
-      serviceWorker: null
-    },
-    {
-      type: 'www',
-      serviceWorker: null
+      serviceWorker: {
+        skipWaiting: true
+      }
     }
   ]
 };

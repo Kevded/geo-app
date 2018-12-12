@@ -6,11 +6,11 @@
         "headers": [
           {
             "name": "Link",
-            "value": "</build/typeaheadcomponent/typeaheadcomponent.fnaj8kq7.js>;rel=preload;as=script"
+            "value": "</build/typeaheadcomponent/typeaheadcomponent.idy0qecs.js>;rel=preload;as=script"
           },
           {
             "name": "Link",
-            "value": "</build/typeaheadcomponent/rnoqxor8.entry.js>;rel=preload;as=script"
+            "value": "</build/typeaheadcomponent/ulotvwoa.entry.js>;rel=preload;as=script"
           },
           {
             "name": "Link",
@@ -24,6 +24,15 @@
           {
             "name": "Cache-Control",
             "value": "public, max-age=31536000"
+          }
+        ]
+      },
+      {
+        "include": "/sw.js",
+        "headers": [
+          {
+            "name": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
           }
         ]
       }
