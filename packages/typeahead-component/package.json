@@ -16,11 +16,7 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
-  "dependencies": {
-    "@types/joi": "^13.6.0",
-    "joi": "^13.7.0",
-    "joi-browser": "^13.4.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@stencil/core": "~0.13.2",
     "cpr": "^3.0.1",

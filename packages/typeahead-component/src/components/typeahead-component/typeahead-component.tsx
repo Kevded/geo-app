@@ -1,22 +1,23 @@
 import { Component, State } from '@stencil/core';
+import { latenize, replaceSpecialChar, replaceSpaceWithHyphen } from '../../utils';
+
 @Component({
-  tag: 'typeahead-component'
+  tag: 'typeahead-component',
+  styleUrl: 'typeahead-component.css'
 })
 export class TypeaheadComponent {
   private API_URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3000'
-  private inputCodeRegion: HTMLInputElement;
-  private inputNomRegion: HTMLInputElement;
 
-  @State() byNomResult;
-  @State() byCodeResult;
+  @State() byNomResult = [];
+  @State() byCodeResult = [];
   @State() statusApi;
 
-  @State() byNomDepartementResult;
-  @State() byCodeDepartementResult;
+  @State() byNomDepartementResult = [];
+  @State() byCodeDepartementResult = [];
 
-  @State() byNomCommuneResult;
-  @State() byCodeCommuneResult;
-  @State() byCodePostalResult;
+  @State() byNomCommuneResult = [];
+  @State() byCodeCommuneResult = [];
+  @State() byCodePostalResult = [];
 
   /*   async componentWillLoad() {
       try {
@@ -27,33 +28,45 @@ export class TypeaheadComponent {
         this.statusApi = {...error}
       }
     } */
+  private normalizeStr(str: string): string {
+
+    return replaceSpecialChar(replaceSpaceWithHyphen(latenize(str).toLowerCase()));
+
+  }
   private async searchByNom(ev) {
+    const normalized_nom = this.normalizeStr(ev.target.value);
+    console.log('normalize', normalized_nom)
     if (ev.target.value.length < 2) {
-      this.byNomResult = 'Saisissez au moins 2 charactères.'
+      // this.byNomResult = 'Saisissez au moins 2 charactères.'
       return;
     }
-    const result = await fetch(`${this.API_URL}/regions?nom=${ev.target.value.replace(/ /g, '-')}`);
+    const result = await fetch(`${this.API_URL}/regions?nom=${normalized_nom}`);
     const data = await result.json();
-    this.byNomResult = data.nom;
+    const filtered = data.map(r => r = { nom: r.nom, code: r.code })
+    this.byNomResult = [...filtered];
   }
 
   private async searchByCode(ev) {
     try {
       const result = await fetch(`${this.API_URL}/regions?code=${ev.target.value}`)
       const data = await result.json();
-      this.byCodeResult = { ...{ nom: data.nom, code: data.code } }
+      const filtered = data.map(r => r = { nom: r.nom, code: r.code })
+      this.byCodeResult = [...filtered]
     } catch (error) {
-      this.byCodeResult = 'Erreur lors de la requete'
+      // this.byCodeResult = 'Erreur lors de la requete'
     }
   }
 
   private async searchDepartementByNom(ev) {
+    const normalized_nom = this.normalizeStr(ev.target.value);
+
     try {
-      const result = await fetch(`${this.API_URL}/departements?nom=${ev.target.value.replace(/ /g, '-')}`)
+      const result = await fetch(`${this.API_URL}/departements?nom=${normalized_nom}`)
       const data = await result.json();
-      this.byNomDepartementResult = { ...{ nom: data.nom, code: data.code } }
+      const filtered = data.map(d => d = { nom: d.nom, code: d.code });
+      this.byNomDepartementResult = [...filtered];
     } catch (error) {
-      this.byNomDepartementResult = 'Erreur lors de la requete'
+      // this.byNomDepartementResult = 'Erreur lors de la requete'
     }
   }
 
@@ -61,24 +74,26 @@ export class TypeaheadComponent {
     try {
       const result = await fetch(`${this.API_URL}/departements?code=${ev.target.value}`)
       const data = await result.json();
-      this.byCodeDepartementResult = { ...{ nom: data.nom, code: data.code } }
+      const filtered = data.map(d => d = { nom: d.nom, code: d.code });
+      this.byCodeDepartementResult = [...filtered];
     } catch (error) {
-      this.byCodeDepartementResult = 'Erreur lors de la requete'
+      // this.byCodeDepartementResult = 'Erreur lors de la requete'
     }
   }
 
   private async searchCommuneByNom(ev) {
+    const normalized_nom = this.normalizeStr(ev.target.value);
     if (ev.target.value.length < 2) {
-      this.byNomResult = 'Saisissez au moins 2 charactères.'
+      // this.byNomResult = 'Saisissez au moins 2 charactères.'
       return;
     }
     try {
-      const result = await fetch(`${this.API_URL}/communes?nom=${ev.target.value.replace(/ /g, '-')}`)
+      const result = await fetch(`${this.API_URL}/communes?nom=${normalized_nom}`)
       const data = await result.json();
       const filterData = data.map(c => c = { nom: c.nom, code: c.code })
-      this.byNomCommuneResult = { ...filterData }
+      this.byNomCommuneResult = [...filterData]
     } catch (error) {
-      this.byNomCommuneResult = 'Erreur lors de la requete'
+      // this.byNomCommuneResult = 'Erreur lors de la requete'
     }
   }
 
@@ -91,39 +106,76 @@ export class TypeaheadComponent {
       </h1>
         <label> Commencez par chargées les données:  {JSON.stringify(this.statusApi)}</label>
         <button onClick={() => fetch(`${this.API_URL}/init`)}>Init data</button>
-
         <br />
         <br />
         <br />
         <form>
           <label >Region par nom: </label>
-          <input type="text"
-            ref={el => this.inputNomRegion = el}
-            onInput={(ev) => this.searchByNom(ev)} />
+          <input type="text" onInput={(ev) => this.searchByNom(ev)} />
           <span>{this.byNomResult}</span>
+          <ul>{this.byNomResult.map(r => <li>
+            <span class="small">nom: &nbsp;</span>
+            {r.nom} &nbsp;
+            <span class="small">code: &nbsp;</span>
+            {r.code}
+          </li>)}</ul>
           <br />
           <label >Region par code: </label>
-          <input type="text"
-            ref={el => this.inputCodeRegion = el}
-            onInput={(ev) => this.searchByCode(ev)} />
-          <span>{JSON.stringify(this.byCodeResult)}</span>
+          <input type="text" onInput={(ev) => this.searchByCode(ev)} />
+          <ul>
+            {this.byCodeResult.map(r => <li>
+              <span class="small">nom: &nbsp;</span>
+              {r.nom}&nbsp;
+                <span class="small">code: &nbsp;</span>
+              {r.code}
+            </li>)}
+          </ul>
           <br />
           <br />
           <label>Departement par nom: </label>
           <input type="text" onInput={ev => this.searchDepartementByNom(ev)} />
-          <span>{JSON.stringify(this.byNomDepartementResult)}</span>
+          <ul>
+            {this.byNomDepartementResult.map(d => <li>
+
+              <span class="small">nom: &nbsp;</span>
+              {d.nom}&nbsp;
+                <span class="small">code: &nbsp;</span>
+              {d.code}
+            </li>
+            )}
+          </ul>
           <br />
           <label>Departement par code: </label>
           <input type="text" onInput={ev => this.searchDepartementByCode(ev)} />
-          <span>{JSON.stringify(this.byCodeDepartementResult)}</span>
+          <ul>
+            {this.byCodeDepartementResult.map(d =>
+              <li>
+                <span class="small">nom: &nbsp;</span>
+                {d.nom}&nbsp;
+                <span class="small">code: &nbsp;</span>
+                {d.code}
+              </li>
+            )}
+          </ul>
           <br />
           <br />
           <label>Commune par nom: </label>
-          <input type="text" onInput={ev => this.searchCommuneByNom(ev)} /> <br />
-          <span>{JSON.stringify(this.byNomCommuneResult)}</span>
+          <input type="text" onInput={ev => this.searchCommuneByNom(ev)} />
+          <br />
+          <ul>
+            {this.byNomCommuneResult.map(c => <li>
+              <span class="small">
+                nom: &nbsp;
+                </span>
+              {c.nom}, &nbsp;
+              <span class="small">
+                code: &nbsp;
+                  </span>
+              {c.code}
+            </li>)}
+          </ul>
         </form>
       </div>
-
     )
   }
 
