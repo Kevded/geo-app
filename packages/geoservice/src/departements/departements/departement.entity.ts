@@ -1,6 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, Column, OneToMany } from "typeorm";
-import { Region } from "../../regions/regions/region.entity";
-import { Commune } from "../../communes/communes/commune.entity";
+import { Entity, PrimaryGeneratedColumn, ManyToOne, Column, OneToMany } from 'typeorm';
+import { Region } from '../../regions/regions/region.entity';
+import { Commune } from '../../communes/communes/commune.entity';
 
 @Entity()
 export class Departement {
@@ -16,9 +16,12 @@ export class Departement {
     @Column()
     nom: string;
 
-    @ManyToOne(type => Region, region => region.departements, { nullable: true , onDelete:"SET NULL"})
+    @Column()
+    normalized_nom: string;
+
+    @ManyToOne(type => Region, region => region.departements, { nullable: true, onDelete: 'SET NULL' })
     region: Region;
 
-    @OneToMany(type => Commune, commune => commune.departement, { eager: false, onDelete:"SET NULL"})
+    @OneToMany(type => Commune, commune => commune.departement, { eager: false, onDelete: 'SET NULL' })
     communes: Commune[];
 }

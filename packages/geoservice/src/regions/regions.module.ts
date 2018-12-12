@@ -8,6 +8,6 @@ import { Region } from './regions/region.entity';
   imports: [TypeOrmModule.forFeature([Region]), HttpModule, Region],
   controllers: [RegionsController],
   providers: [RegionsService],
-  exports: [Region, RegionsService]
+  exports: [Region, RegionsService, RegionsModule]
 })
 export class RegionsModule { }

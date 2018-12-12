@@ -10,6 +10,9 @@ export class Commune {
     nom: string;
 
     @Column()
+    normalized_nom: string;
+    
+    @Column()
     code: string;
 
     /*     @Column()
@@ -26,9 +29,9 @@ export class Commune {
     @Column()
     population: number;
 
-    @Column()
-     codesPostaux: string[];
+ /*    @Column()
+    codesPostaux: string[]; */
 
-    @ManyToOne(type => Departement, departement => departement.communes, {nullable: true, onDelete: 'SET NULL'})
+    @ManyToOne(type => Departement, departement => departement.communes, { nullable: true, onDelete: 'SET NULL' })
     departement: Departement;
 }

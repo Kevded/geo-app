@@ -12,8 +12,11 @@ export class Region {
 
     @Column()
     nom: string;
+    
+    @Column()
+    normalized_nom: string;
 
     @IsOptional()
-    @OneToMany(type => Departement, departement => departement.region, { eager: false, onDelete:"SET NULL" })
+    @OneToMany(type => Departement, departement => departement.region, { eager: false, onDelete: "SET NULL" })
     departements: Departement[];
 }
