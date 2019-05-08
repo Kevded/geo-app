@@ -4,5 +4,8 @@
     "alias": [
         "geo-app.now.sh",
         "geo-app.fullstackiot.com"
-    ]
+    ],
+    "github":{
+        "enabled": true
+    }
 }
