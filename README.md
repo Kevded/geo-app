@@ -1,4 +1,5 @@
-Demo on [https://geo-app.now.sh](https://geo-app.now.sh)
+Demo on [geo-app.now.sh](https://geo-app.now.sh)
+|  [geo-app.fullstackiot.com](https://geo-app.fullstackiot.com)
 
 1. Build typeahead-geoservice
 2. Copy dist folder to geoservice/src/public
