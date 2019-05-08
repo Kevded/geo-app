@@ -2,12 +2,12 @@
   "namespace": "typeaheadcomponent",
   "fsNamespace": "typeaheadcomponent",
   "loader": "../typeaheadcomponent.js",
-  "core": "typeaheadcomponent.vumsasac.js",
-  "corePolyfilled": "typeaheadcomponent.idy0qecs.js",
+  "core": "typeaheadcomponent.p7qsflhp.js",
+  "corePolyfilled": "typeaheadcomponent.6hkczhln.js",
   "components": {
     "typeahead-component": {
       "bundleIds": {
-        "$": "ulotvwoa"
+        "$": "jjwjokpr"
       }
     }
   }

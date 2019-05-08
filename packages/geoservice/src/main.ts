@@ -12,6 +12,6 @@ async function bootstrap() {
     }));
     app.useStaticAssets(join(__dirname, 'public'));
     if (!(process.env.NODE_ENV === 'production')) app.enableCors();
-    await app.listen(process.env.NODE_ENV === 'production' ? 80 : 3000);
+    await app.listen(process.env.PORT);
 }
 bootstrap();
