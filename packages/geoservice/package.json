@@ -1,7 +1,7 @@
 {
   "name": "geoservice",
   "version": "0.0.1",
-  "description": "communes, codes postaux, region, France",
+  "description": "Recherche par communes, codes postaux, regions, en France",
   "author": "Deddy SAINT-VAL",
   "license": "MIT",
   "scripts": {
@@ -31,7 +31,7 @@
     "mysql": "^2.16.0",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.2.2",
-    "sqlite3": "^4.0.2",
+    "sqlite3": "^4.0.6",
     "typeorm": "^0.2.7",
     "typescript": "^3.0.1"
   },

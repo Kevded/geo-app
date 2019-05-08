@@ -1,7 +1,7 @@
 {
   "name": "typeahead-component",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Web Component pour rechercher par communes, codes postaux, regions, en France",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
   "types": "dist/types/components.d.ts",

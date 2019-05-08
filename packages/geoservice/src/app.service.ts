@@ -41,30 +41,22 @@ export class AppService {
       try {
         // Pour un département on récup ces communes en intérogeant l'api par codeDepartement
         const communesDto = await this.httpService.get((`https://geo.api.gouv.fr/communes?codeDepartement=${departement.code}`)).toPromise();
-        //on associe le departement à chaque commune
+        // On associe le departement à chaque commune
         const communesWiAssignedDepartement = communesDto.data.map((c) => c = { ...c, departement: { id: departement.id } });
-        // console.log(JSON.stringify(communesWiAssignedDepartement[0]), '\n')
 
         try {
           // On sauvegarde les communes dans la bdd
           await this.communesService.populate(communesWiAssignedDepartement)
         } catch (error) {
-          console.log('Erreur lors d', error)
+          console.error('Erreur lors de la récupérations des communes ', error.message)
         }
       } catch (error) {
-        console.log('erreur lors de récupération des communes | assignation ID\n', error)
+        console.error('erreur lors de récupération des communes | assignation ID\n', error.message)
       }
-
-      //const communesOfDepartement = communesList.filter(commune=> commune.codeDepartement === departement.code)
-      //departement.communes = communesOfDepartement;
-      //await this.departementsService.save(departement)
     });
-
-    //const res = await this.httpService.get('https://geo.api.gouv.fr/departements').toPromise();
-    //return await this.communesService.populate(res.data);
   }
 
-  async initDB() {
+  async initDatabase() {
     await this.fetchRegions();
     await this.fetchDepartements();
     await this.fetchCommunes();

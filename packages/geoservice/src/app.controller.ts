@@ -6,8 +6,9 @@ export class AppController {
   constructor(private readonly appService: AppService) { }
 
   @Get('init')
-  initDB() {
-    this.appService.initDB();
+  async  initDatabase() {
+    await this.appService.initDatabase();
+    return 'ok'
   }
 
   @Get('/init/r')

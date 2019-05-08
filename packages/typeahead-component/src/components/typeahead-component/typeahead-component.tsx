@@ -10,7 +10,7 @@ export class TypeaheadComponent {
 
   @State() byNomResult = [];
   @State() byCodeResult = [];
-  @State() statusApi;
+  @State() statusApi: string;
 
   @State() byNomDepartementResult = [];
   @State() byCodeDepartementResult = [];
@@ -19,15 +19,24 @@ export class TypeaheadComponent {
   @State() byCodeCommuneResult = [];
   @State() byCodePostalResult = [];
 
-  /*   async componentWillLoad() {
-      try {
-        const initRes = await fetch(`${this.API_URL}/init`);
-        const result = await initRes.json()
-        this.statusApi = result;
-      } catch (error) {
-        this.statusApi = {...error}
-      }
-    } */
+  async componentWillLoad() {
+    this.initAPI();
+  }
+  initAPI() {
+    this.statusApi = "chargement...";
+    fetch(`${this.API_URL}/init`)
+      .then(res => {
+        if (res.ok) {
+          this.statusApi = "données chargées"
+        } else {
+          throw new Error()
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        this.statusApi = error.message;
+      });
+  }
   private normalizeStr(str: string): string {
 
     return replaceSpecialChar(replaceSpaceWithHyphen(latenize(str).toLowerCase()));
@@ -102,15 +111,16 @@ export class TypeaheadComponent {
       <div class=" container">
         <h1>
           <img src="assets/logoLite.png" style={{ width: "10%" }} class="no-responsive no-border" />
-          Rechercher par Region, Departement, Commune
+          Rechercher par Region, Departement, Commune en France
       </h1>
-        <label> Commencez par chargées les données:  {JSON.stringify(this.statusApi)}</label>
-        <button onClick={() => fetch(`${this.API_URL}/init`)}>Init data</button>
+        <h2><a href="https://github.com/Kevded/geo-app">Voir le projet sur Github</a></h2>
+        <button onClick={() => this.initAPI()}>Commencez par charger les données</button>
+        <label> status des données :  <strong class={{ "status-success": !!this.statusApi, "status-error": !this.statusApi, "status-loading": this.statusApi === 'chargement...' }}>{this.statusApi ? this.statusApi : 'données non chargées'}</strong></label>
         <br />
         <br />
         <br />
         <form>
-          <label >Region par nom: </label>
+          <label >Region par nom (ex: "Nouvelle Aquitaine") : </label>
           <input type="text" onInput={(ev) => this.searchByNom(ev)} />
           <span>{this.byNomResult}</span>
           <ul>{this.byNomResult.map(r => <li>
@@ -120,7 +130,7 @@ export class TypeaheadComponent {
             {r.code}
           </li>)}</ul>
           <br />
-          <label >Region par code: </label>
+          <label >Region par code (ex: "53") : </label>
           <input type="text" onInput={(ev) => this.searchByCode(ev)} />
           <ul>
             {this.byCodeResult.map(r => <li>
@@ -132,7 +142,7 @@ export class TypeaheadComponent {
           </ul>
           <br />
           <br />
-          <label>Departement par nom: </label>
+          <label>Departement par nom (ex: "Indre") : </label>
           <input type="text" onInput={ev => this.searchDepartementByNom(ev)} />
           <ul>
             {this.byNomDepartementResult.map(d => <li>
@@ -145,7 +155,7 @@ export class TypeaheadComponent {
             )}
           </ul>
           <br />
-          <label>Departement par code: </label>
+          <label>Departement par code (ex : "01") : </label>
           <input type="text" onInput={ev => this.searchDepartementByCode(ev)} />
           <ul>
             {this.byCodeDepartementResult.map(d =>
@@ -159,7 +169,7 @@ export class TypeaheadComponent {
           </ul>
           <br />
           <br />
-          <label>Commune par nom: </label>
+          <label>Commune par nom (ex : "Rennes") : </label>
           <input type="text" onInput={ev => this.searchCommuneByNom(ev)} />
           <br />
           <ul>

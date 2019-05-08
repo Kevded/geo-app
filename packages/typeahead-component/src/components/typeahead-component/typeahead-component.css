@@ -1,3 +1,13 @@
 .small{
     font-size: small;
 }
+
+.status-success{
+    color:#40c4ff;
+}
+.status-error{
+    color:#d81b60;
+}
+.status-loading{
+    color:#fbc02d;
+}
