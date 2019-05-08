@@ -1,0 +1,8 @@
+{
+    "version": 1,
+    "name": "geo-app",
+    "alias": [
+        "geo-app.now.sh",
+        "geo-app.fullstackiot.com"
+    ]
+}
