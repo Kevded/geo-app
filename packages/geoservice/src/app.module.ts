@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, HttpModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { RegionsModule } from './regions/regions.module';
@@ -11,7 +11,11 @@ import { Departement } from './departements/departements/departement.entity';
 import { Commune } from './communes/communes/commune.entity';
 
 @Module({
-  imports: [RegionsModule, CommunesModule, DepartementsModule,
+  imports: [
+    HttpModule,
+    RegionsModule,
+    CommunesModule,
+    DepartementsModule,
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: ':memory:',
