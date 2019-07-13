@@ -1,5 +1,5 @@
 import { Controller, Get, Query } from '@nestjs/common';
-import { RegionsService } from '../regions.service';
+import { RegionsService } from './regions.service';
 import { RegionQuery } from './regionQuery';
 @Controller('regions')
 export class RegionsController {

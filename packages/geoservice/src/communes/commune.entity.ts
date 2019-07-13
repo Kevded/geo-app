@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import { Departement } from '../../departements/departements/departement.entity';
+import { Departement } from '../departements/departement.entity';
 
 @Entity()
 export class Commune {

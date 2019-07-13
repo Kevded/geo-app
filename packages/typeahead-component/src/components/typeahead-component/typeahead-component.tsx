@@ -113,7 +113,9 @@ export class TypeaheadComponent {
           <img src="assets/logoLite.png" style={{ width: "10%" }} class="no-responsive no-border" />
           Rechercher par Region, Departement, Commune en France
       </h1>
-        <h2><a href="https://github.com/Kevded/geo-app">Voir le projet sur Github</a></h2>
+      <h2><a href="https://github.com/Kevded/geo-app">Voir le projet sur Github</a></h2>
+      <h2><a href="/swagger">Voir Swagger</a></h2>
+        
         <button onClick={() => this.initAPI()}>Commencez par charger les données</button>
         <label> status des données :  <strong class={{ "status-success": !!this.statusApi, "status-error": !this.statusApi, "status-loading": this.statusApi === 'chargement...' }}>{this.statusApi ? this.statusApi : 'données non chargées'}</strong></label>
         <br />

@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { Departement } from '../../departements/departements/departement.entity';
+import { Departement } from '../departements/departement.entity';
 import { IsOptional } from 'class-validator';
 
 @Entity()

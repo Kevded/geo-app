@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { CommunesController } from './communes/communes.controller';
+import { CommunesController } from './communes.controller';
 import { CommunesService } from './communes.service';
-import { Commune } from './communes/commune.entity';
+import { Commune } from './commune.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({

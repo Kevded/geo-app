@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Commune } from './communes/commune.entity';
+import { Commune } from './commune.entity';
 import { Repository, getConnection, Like } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { replaceSpecialChar, replaceSpaceWithHyphen } from '../common/utils';

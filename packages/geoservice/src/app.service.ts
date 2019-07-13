@@ -2,7 +2,7 @@ import { Injectable, HttpService } from '@nestjs/common';
 import { RegionsService } from './regions/regions.service';
 import { DepartementsService } from './departements/departements.service';
 import { CommunesService } from './communes/communes.service';
-import { Departement } from './departements/departements/departement.entity';
+import { Departement } from './departements/departement.entity';
 
 @Injectable()
 export class AppService {

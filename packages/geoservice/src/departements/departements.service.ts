@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Departement } from './departements/departement.entity';
+import { Departement } from './departement.entity';
 import { Repository, getConnection, Like } from 'typeorm';
 import * as latenize from 'latenize';
 import { replaceSpecialChar, replaceSpaceWithHyphen } from '../common/utils';

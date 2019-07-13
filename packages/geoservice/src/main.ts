@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { join } from 'path';
 import { NestExpressApplication } from '@nestjs/platform-express';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 
 async function bootstrap() {
@@ -13,7 +14,21 @@ async function bootstrap() {
         // disableErrorMessages: process.env.NODE_ENV === 'production' ? true : false
     }));
     app.useStaticAssets(join(__dirname, 'public'));
-    if (!(process.env.NODE_ENV === 'production')) app.enableCors();
+    if (!(process.env.NODE_ENV === 'production')) 
+    {
+        app.enableCors();
+    }
+
+
+    const options = new DocumentBuilder()
+        .setTitle('Geoservice API')
+        .setDescription('The geoservice API description')
+        .setVersion('1.0')
+        //.addTag('geoservice')
+        .build();
+    const document = SwaggerModule.createDocument(app, options);
+    SwaggerModule.setup('swagger', app, document);
+
     await app.listen(process.env.PORT || 3000);
 }
 bootstrap();

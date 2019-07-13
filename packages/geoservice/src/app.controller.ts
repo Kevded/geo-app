@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
+  
   @Get('init')
   async  initDatabase() {
     await this.appService.initDatabase();

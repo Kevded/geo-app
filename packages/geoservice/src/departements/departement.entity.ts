@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, ManyToOne, Column, OneToMany } from 'typeorm';
-import { Region } from '../../regions/regions/region.entity';
-import { Commune } from '../../communes/communes/commune.entity';
+import { Region } from '../regions/region.entity';
+import { Commune } from '../communes/commune.entity';
 
 @Entity()
 export class Departement {

@@ -1,5 +1,5 @@
-import { Controller, Get, Query, SerializeOptions } from '@nestjs/common';
-import { CommunesService } from '../communes.service';
+import { Controller, Get, Query } from '@nestjs/common';
+import { CommunesService } from './communes.service';
 
 @Controller('communes')
 export class CommunesController {

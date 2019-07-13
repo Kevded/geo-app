@@ -4,11 +4,11 @@ import { AppService } from './app.service';
 import { RegionsModule } from './regions/regions.module';
 import { CommunesModule } from './communes/communes.module';
 import { DepartementsModule } from './departements/departements.module';
-import { Region } from './regions/regions/region.entity';
+import { Region } from './regions/region.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
-import { Departement } from './departements/departements/departement.entity';
-import { Commune } from './communes/communes/commune.entity';
+import { Departement } from './departements/departement.entity';
+import { Commune } from './communes/commune.entity';
 
 @Module({
   imports: [
