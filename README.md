@@ -24,3 +24,9 @@ Swagger [geo-app.now.sh/swagger-ui](https://geo-app.now.sh/swagger-ui)
 4. Deploy geoservice (npm run now-deploy)
 
         npm run now-deploy
+
+
+## Inspired by
+
+[https://geo.api.gouv.fr](geo.api.gouv.fr)
+[https://github.com/etalab/geo.data.gouv.fr](github.com/etalab/geo.data.gouv.fr)

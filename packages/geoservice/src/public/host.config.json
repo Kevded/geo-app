@@ -6,11 +6,28 @@
         "headers": [
           {
             "name": "Link",
-            "value": "</build/typeaheadcomponent/typeaheadcomponent.6hkczhln.js>;rel=preload;as=script"
+            "value": "</build/typeaheadcomponent/typeaheadcomponent.irw6vpym.js>;rel=preload;as=script"
           },
           {
             "name": "Link",
-            "value": "</build/typeaheadcomponent/jjwjokpr.entry.js>;rel=preload;as=script"
+            "value": "</build/typeaheadcomponent/sxlvqvjr.entry.js>;rel=preload;as=script"
+          },
+          {
+            "name": "Link",
+            "value": "</assets/logoLite.png>;rel=preload;as=image"
+          }
+        ]
+      },
+      {
+        "include": "/swagger-ui",
+        "headers": [
+          {
+            "name": "Link",
+            "value": "</build/typeaheadcomponent/typeaheadcomponent.irw6vpym.js>;rel=preload;as=script"
+          },
+          {
+            "name": "Link",
+            "value": "</build/typeaheadcomponent/sxlvqvjr.entry.js>;rel=preload;as=script"
           },
           {
             "name": "Link",

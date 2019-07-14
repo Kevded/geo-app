@@ -21,11 +21,12 @@
     "test:e2e": "jest --config ./test/jest-e2e.json --debug",
     "webpack": "webpack --config webpack.config.js",
     "now-start": "npm run start:prod",
-    "now-deploy": "now --public --name geo-app --alias geo-app.now.sh geo-app.fullstackiot.com"
+    "now-deploy": "now --public --name geo-app --alias geo-app.now.sh geo-app.fullstackiot.com",
+    "now-alias":"now --alias geo-app.now.sh geo-app.fullstackiot.com"
   },
   "dependencies": {
     "@nestjs/common": "^6.5.2",
-    "@nestjs/core": "6.3.1",
+    "@nestjs/core": "^6.5.2",
     "@nestjs/platform-express": "^6.5.2",
     "@nestjs/swagger": "^3.0.2",
     "@nestjs/typeorm": "^5.3.0",
