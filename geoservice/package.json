@@ -28,10 +28,10 @@
     "now-alias": "now --alias geo-app.now.sh geo-app.fullstackiot.com"
   },
   "dependencies": {
-    "@nestjs/common": "^6.5.2",
-    "@nestjs/core": "^6.5.2",
-    "@nestjs/platform-express": "^6.5.2",
-    "@nestjs/swagger": "^3.0.2",
+    "@nestjs/common": "^6.8.2",
+    "@nestjs/core": "^6.8.2",
+    "@nestjs/platform-express": "^6.8.2",
+    "@nestjs/swagger": "^3.1.0",
     "@nestjs/typeorm": "^5.3.0",
     "class-transformer": "^0.1.9",
     "class-validator": "^0.9.1",
