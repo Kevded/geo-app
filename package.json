@@ -2,8 +2,6 @@
 	"name": "geo-app",
 	"description": "Rechercher par Region, Departement, Commune en France",
 	"version": "0.0.1",
-	"devDependencies": {
-		"lerna": "^2.11.0"
-	},
+	"devDependencies": {},
 	"dependencies": {}
 }

@@ -1,7 +1,7 @@
 *node_modules/
 *dist/
 
-packages/geo-typeahead/*
+geo-typeahead/*
 
 .env
 *components.d.ts
