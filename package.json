@@ -5,7 +5,5 @@
 	"devDependencies": {
 		"lerna": "^2.11.0"
 	},
-	"dependencies": {
-		"@types/jest": "^23.3.8"
-	}
+	"dependencies": {}
 }
