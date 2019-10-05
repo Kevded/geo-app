@@ -1,12 +1,15 @@
 {
   "name": "geoservice",
+  "engines": {
+    "node": "10.x"
+  },
   "version": "0.0.1",
   "description": "Recherche par communes, codes postaux, regions, en France",
   "author": "Deddy SAINT-VAL",
   "license": "MIT",
   "scripts": {
     "cpr": "./node_modules/.bin/cpr",
-    "build": "tsc -p tsconfig.build.json && cpr src/public dist/public -o",
+    "build": "tsc -p tsconfig.build.json  && cpr src/public dist/public -o",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "nodemon",
@@ -22,7 +25,7 @@
     "webpack": "webpack --config webpack.config.js",
     "now-start": "npm run start:prod",
     "now-deploy": "now --public --name geo-app --alias geo-app.now.sh geo-app.fullstackiot.com",
-    "now-alias":"now --alias geo-app.now.sh geo-app.fullstackiot.com"
+    "now-alias": "now --alias geo-app.now.sh geo-app.fullstackiot.com"
   },
   "dependencies": {
     "@nestjs/common": "^6.5.2",
@@ -32,11 +35,11 @@
     "@nestjs/typeorm": "^5.3.0",
     "class-transformer": "^0.1.9",
     "class-validator": "^0.9.1",
+    "dotenv": "^8.0.0",
     "latenize": "^0.2.0",
-    "mysql": "^2.16.0",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.2.2",
-    "sqlite3": "^4.0.6",
+    "sqlite3": "^4.1.0",
     "swagger-ui-express": "^4.0.7",
     "typeorm": "^0.2.7",
     "typescript": "^3.0.1"

@@ -2,26 +2,32 @@
   "name": "typeahead-component",
   "version": "0.0.1",
   "description": "Web Component pour rechercher par communes, codes postaux, regions, en France",
-  "module": "dist/esm/index.js",
   "main": "dist/index.js",
-  "types": "dist/types/components.d.ts",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
   "files": [
-    "dist/"
+    "dist/",
+    "loader/"
   ],
   "scripts": {
     "build": "stencil build --prerender && npm run copy_in_geoservice",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "copy_in_geoservice": "cpr www ../geoservice/src/public -o"
+    "copy_in_geoservice": "cpr www ../geoservice/src/public -o",
+    "generate": "stencil generate",
+    "update:stencil": "npm install @stencil/core@latest --save-exact"
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "~0.15.2",
-    "@types/node": "^10.12.12",
+    "@stencil/core": "1.5.4",
+    "@types/node": "^12.7.11",
     "cpr": "^3.0.1",
-    "workbox-build": "3.4.1"
+    "workbox-build": "4.3.1"
   },
   "repository": {
     "type": "git",

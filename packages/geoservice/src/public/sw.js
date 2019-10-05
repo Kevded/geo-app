@@ -11,9 +11,9 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
-workbox.skipWaiting();
+workbox.core.skipWaiting();
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
@@ -22,37 +22,32 @@ workbox.skipWaiting();
  */
 self.__precacheManifest = [
   {
-    "url": "build/typeaheadcomponent.js",
-    "revision": "c409ca5067d93079419895bb5da4d1f5"
-  },
-  {
-    "url": "build/typeaheadcomponent/sxlvqvjr.entry.js",
-    "revision": "b172ef42f26b1c55687efc56c3b66140"
-  },
-  {
-    "url": "build/typeaheadcomponent/sxlvqvjr.sc.entry.js",
-    "revision": "b172ef42f26b1c55687efc56c3b66140"
-  },
-  {
-    "url": "build/typeaheadcomponent/typeaheadcomponent.irw6vpym.js",
-    "revision": "8915ba56960c9111610d1acb3e19e12c"
-  },
-  {
-    "url": "build/typeaheadcomponent/typeaheadcomponent.ygheytyt.js",
-    "revision": "62085e62d62d3caa381c04b77633bfb1"
+    "url": "index-org.html",
+    "revision": "8136945d5241b4b59e6190d5282945cb"
   },
   {
     "url": "index.html",
-    "revision": "c17240bb5292b4ab73997ea52e3ccfbc"
+    "revision": "53afe5581ec18cb1e7a5e0c4d95684e2"
+  },
+  {
+    "url": "build/index.esm.js",
+    "revision": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  {
+    "url": "build/p-1635c1a0.js"
+  },
+  {
+    "url": "build/p-747da4d6.js"
+  },
+  {
+    "url": "build/p-d0882b30.js"
+  },
+  {
+    "url": "build/p-zfhvaa9g.entry.js"
   },
   {
     "url": "manifest.json",
-    "revision": "84574a5afeab12e2a572fca0b8913b20"
-  },
-  {
-    "url": "swagger-ui/index.html",
-    "revision": "c17240bb5292b4ab73997ea52e3ccfbc"
+    "revision": "277d2affd8acb2a0ab028bf1dda78496"
   }
 ].concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

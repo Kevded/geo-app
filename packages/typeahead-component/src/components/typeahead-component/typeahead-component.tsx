@@ -1,4 +1,4 @@
-import { Component, State } from '@stencil/core';
+import { Component, State, h } from '@stencil/core';
 import { latenize, replaceSpecialChar, replaceSpaceWithHyphen } from '../../utils';
 
 @Component({
@@ -6,7 +6,7 @@ import { latenize, replaceSpecialChar, replaceSpaceWithHyphen } from '../../util
   styleUrl: 'typeahead-component.css'
 })
 export class TypeaheadComponent {
-  private API_URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3000'
+  private API_URL = process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:3000/api'
 
   @State() byNomResult = [];
   @State() byCodeResult = [];
@@ -20,6 +20,7 @@ export class TypeaheadComponent {
   @State() byCodePostalResult = [];
 
   async componentWillLoad() {
+    console.log(this.API_URL)
     this.initAPI();
   }
   initAPI() {
@@ -114,7 +115,6 @@ export class TypeaheadComponent {
           Rechercher par Region, Departement, Commune en France
       </h1>
       <h2><a href="https://github.com/Kevded/geo-app">Voir le projet sur Github</a></h2>
-      <h2><a href="/swagger-ui">Voir Swagger</a></h2>
         
         <button onClick={() => this.initAPI()}>Commencez par charger les données</button>
         <label> status des données :  <strong class={{ "status-success": !!this.statusApi, "status-error": !this.statusApi, "status-loading": this.statusApi === 'chargement...' }}>{this.statusApi ? this.statusApi : 'données non chargées'}</strong></label>
