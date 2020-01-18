@@ -1,4 +1,4 @@
-[![Codecov Coverage](https://img.shields.io/codecov/c/github/kevded/geo-app/master>.svg?style=flat-square)](https://codecov.io/gh/kevded/geo-app/)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/kevded/geo-app/master.svg?style=flat-square)](https://codecov.io/gh/kevded/geo-app/)
 
 
 
