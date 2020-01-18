@@ -12,7 +12,7 @@ import { RegionRepository } from "../src/regions/region.repository";
 describe('Regions', () => {
     let app: INestApplication;
     let regionMock = [new Region()];
-    let regionsServiceMock = { findAll: async () => regionMock };
+    let regionsServiceMock = { findAll: async () => regionMock ,  findOne: async (args?) => { }};
 
     beforeAll(async () => {
         const module = await Test.createTestingModule({
