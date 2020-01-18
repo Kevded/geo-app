@@ -22,6 +22,7 @@ jobs:
         cd geoservice
         npm ci
         npm run build --if-present
-        npm run test:e2e
+        npm run test
+		    npm run test:e2e
       env:
         CI: true
