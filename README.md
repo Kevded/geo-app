@@ -1,3 +1,7 @@
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/kevded/geo-app/master>.svg?style=flat-square)](https://codecov.io/gh/kevded/geo-app/)
+
+
+
 Demo on [geo-app.now.sh](https://geo-app.now.sh)
 |  [geo-app.fullstackiot.com](https://geo-app.fullstackiot.com)
 
