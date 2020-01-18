@@ -13,6 +13,7 @@ Swagger [geo-app.now.sh/swagger-ui](https://geo-app.now.sh/swagger-ui)
 
 
 
+# Run
 
 1. Build typeahead-geoservice
 
@@ -31,8 +32,9 @@ Swagger [geo-app.now.sh/swagger-ui](https://geo-app.now.sh/swagger-ui)
         #dev
         npm run start:dev
 
+# Deploy (now.sh)
 
-4. Deploy geoservice (npm run now-deploy)
+Deploy geoservice 
 
         npm run now-deploy
 
