@@ -9,6 +9,11 @@ Demo on [geo-app.now.sh](https://geo-app.now.sh)
 
 Swagger [geo-app.now.sh/swagger-ui](https://geo-app.now.sh/swagger-ui)
 
+[![Screenshot](/capture.png)](/capture.png)
+
+
+
+
 1. Build typeahead-geoservice
 
         cd typeahead-component/ 
