@@ -1,6 +1,6 @@
 [![Codecov Coverage](https://img.shields.io/codecov/c/github/kevded/geo-app/master.svg?style=flat-square)](https://codecov.io/gh/kevded/geo-app/)
 
-[![Build](https://github.com/kevded/geo-app/workflows/.github/workflows/nodejs.yml/badge.svg)](https://github.com/kevded/geo-app/workflows/.github/workflows/nodejs.yml/badge.svg)
+[![Build](https://github.com/kevded/geo-app/workflows/Node%20CI/badge.svg)](https://github.com/kevded/geo-app/workflows/Node%20CI/badge.svg)
 
 
 

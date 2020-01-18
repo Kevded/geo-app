@@ -56,7 +56,6 @@ describe('Departements', () => {
 
         jest.spyOn(departementServiceSpy, 'findAll').mockImplementation(async (nom?, code?) => departementMock);
 
-        console.log("", await departementServiceSpy.findAll())
         return request(app.getHttpServer())
             .get('/api/departements')
             .expect(200)
