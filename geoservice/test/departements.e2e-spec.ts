@@ -26,9 +26,7 @@ describe('Departements', () => {
     let deprep: DepartementRepository;
     beforeAll(async () => {
         module = await Test.createTestingModule({
-
-            imports: [
-            ],
+            imports: [],
             controllers: [
                 DepartementsController
             ],
@@ -37,7 +35,8 @@ describe('Departements', () => {
                 {
                     provide: getRepositoryToken(Departement),
                     useClass: DepartementRepository
-                }, {
+                },
+                {
                     provide: DepartementsService,
                     useValue: departementsServiceMock
                 }
