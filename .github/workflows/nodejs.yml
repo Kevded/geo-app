@@ -28,4 +28,4 @@ jobs:
         npx codecov --token=$CODECOV_TOKEN
       env:
         CI: true
-		CODECOV_TOKEN: ${{secret.CODECOV_TOKEN}}
+		CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
