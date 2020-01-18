@@ -48,7 +48,7 @@ describe('Departements', () => {
         departementServiceSpy = module.get<DepartementsService>(DepartementsService);
         deprep = module.get<DepartementRepository>(DepartementRepository);
         app = await module.createNestApplication();
-        app.setGlobalPrefix('api')
+        app.setGlobalPrefix('api');
         await app.init();
     });
 
