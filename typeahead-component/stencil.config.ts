@@ -4,7 +4,7 @@ export const config: Config = {
   namespace: 'typeaheadcomponent',
   outputTargets: [
     {
-      baseUrl: 'http://app.base',
+      baseUrl: 'http://app.base/',
       type: 'www',
       serviceWorker: {
         skipWaiting: true

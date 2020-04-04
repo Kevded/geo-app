@@ -18,7 +18,7 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "copy_in_geoservice": "cpr www ../geoservice/src/public -o",
+    "copy_in_geoservice": "cpr www ../geoservice/public -o",
     "generate": "stencil generate",
     "update:stencil": "npm install @stencil/core@latest --save-exact"
   },
