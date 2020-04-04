@@ -1,0 +1,1 @@
+web: cd typeahead-component && npm run build && cd ../geoservice && npm run start:prod
