@@ -1,11 +1,22 @@
 {
-    "version": 1,
-    "name": "geo-app",
+    "version": 2,
     "alias": [
         "geo-app.now.sh",
         "geo-app.fullstackiot.com"
     ],
-    "github":{
+    "github": {
         "enabled": true
-    }
+    },
+    "builds": [
+        {
+            "src": "dist/main.js",
+            "use": "@now/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "dist/main.js"
+        }
+    ]
 }
