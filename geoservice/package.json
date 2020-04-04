@@ -6,11 +6,12 @@
   "license": "MIT",
   "scripts": {
     "cpr": "./node_modules/.bin/cpr",
+    
     "build": "tsc -p tsconfig.build.json  && cpr src/public dist/public -o",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
-    "start:dev": "nodemon",
-    "start:debug": "nodemon --config nodemon-debug.json",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
     "prestart:prod": "rimraf dist && npm run build ",
     "start:prod": "node dist/main.js",
     "start:hmr": "node dist/server",
@@ -28,7 +29,6 @@
     "@nestjs/common": "^7.0.7",
     "@nestjs/core": "^7.0.7",
     "@nestjs/platform-express": "^7.0.7",
-    "@nestjs/swagger": "^4.5.1",
     "@nestjs/typeorm": "^7.0.0",
     "class-transformer": "^0.1.9",
     "class-validator": "^0.11.0",
@@ -37,7 +37,6 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.4",
     "sqlite3": "^4.1.0",
-    "swagger-ui-express": "^4.0.7",
     "typeorm": "^0.2.7",
     "typescript": "3.7.2"
   },
