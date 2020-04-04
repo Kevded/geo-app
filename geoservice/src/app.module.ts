@@ -9,6 +9,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { Departement } from './departements/departement.entity';
 import { Commune } from './communes/commune.entity';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
+
 
 @Module({
   imports: [
@@ -22,6 +25,9 @@ import { Commune } from './communes/commune.entity';
       entities: [Region, Departement, Commune],
       synchronize: true,
     }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..' , 'public')
+    })
   ],
   controllers: [AppController],
   providers: [AppService],
