@@ -1,0 +1,19 @@
+{
+  "name": "geo-app",
+  "version": "1.0.0",
+  "description": "[![Codecov Coverage](https://img.shields.io/codecov/c/github/kevded/geo-app/master.svg?style=flat-square)](https://codecov.io/gh/kevded/geo-app/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kevded/geo-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kevded/geo-app/issues"
+  },
+  "homepage": "https://github.com/Kevded/geo-app#readme"
+}
