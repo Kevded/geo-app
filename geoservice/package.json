@@ -1,8 +1,5 @@
 {
   "name": "geoservice",
-  "engines": {
-    "node": "10.x"
-  },
   "version": "0.0.1",
   "description": "Recherche par communes, codes postaux, regions, en France",
   "author": "Deddy SAINT-VAL",
@@ -28,11 +25,11 @@
     "now-alias": "now --alias geo-app.now.sh geo-app.fullstackiot.com"
   },
   "dependencies": {
-    "@nestjs/common": "^6.10.14",
-    "@nestjs/core": "^6.10.14",
-    "@nestjs/platform-express": "^6.10.14",
-    "@nestjs/swagger": "^3.1.0",
-    "@nestjs/typeorm": "^5.3.0",
+    "@nestjs/common": "^7.0.7",
+    "@nestjs/core": "^7.0.7",
+    "@nestjs/platform-express": "^7.0.7",
+    "@nestjs/swagger": "^4.5.1",
+    "@nestjs/typeorm": "^7.0.0",
     "class-transformer": "^0.1.9",
     "class-validator": "^0.11.0",
     "dotenv": "^8.0.0",
@@ -51,6 +48,7 @@
     "@types/jest": "^24.9.0",
     "@types/node": "^10.17.3",
     "@types/supertest": "^2.0.5",
+    "codecov": "^3.6.1",
     "cpr": "^3.0.1",
     "jest": "24.9.0",
     "nodemon": "^1.19.1",
@@ -78,6 +76,12 @@
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "coverageDirectory": "../coverage",
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ],
+    "collectCoverage": true,
     "testEnvironment": "node"
   },
   "env": {
