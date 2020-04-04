@@ -20,9 +20,7 @@
     "test:cov": "jest --coverage",
     "test:e2e": "jest --config ./test/jest-e2e.json --debug",
     "webpack": "webpack --config webpack.config.js",
-    "now-start": "npm run start:prod",
-    "now-deploy": "now --public --name geo-app --alias geo-app.now.sh geo-app.fullstackiot.com",
-    "now-alias": "now --alias geo-app.now.sh geo-app.fullstackiot.com"
+    "xheroku-postbuild":"npm run build && cd ../typeahead-component && npm run build"
   },
   "dependencies": {
     "@nestjs/common": "^7.0.7",
