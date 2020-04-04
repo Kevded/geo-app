@@ -4,39 +4,28 @@
 
 
 
-Demo on [geo-app.now.sh](https://geo-app.now.sh)
-|  [geo-app.fullstackiot.com](https://geo-app.fullstackiot.com)
+# Demo [geo-app-fr.herokuapp.com](https://geo-app-fr.herokuapp.com/)
 
-Swagger [geo-app.now.sh/swagger-ui](https://geo-app.now.sh/swagger-ui)
 
 [![Screenshot](/capture.png)](/capture.png)
-
-
 
 # Run
 
 1. Build typeahead-geoservice
 
-        cd typeahead-component/ 
+        cd typeahead-component
         npm run build
 
-2. Copy dist folder to geoservice/src/public
-        
-        cd typeahead-component/ 
-        npm run copy_in_geoservice
-
-3. Run prestart:prod in geoservice
+1. Run geoservice
 
         cd geoservice
-        npm run prestart:prod
-        #dev
+        npm run start:prod
+        # dev
         npm run start:dev
 
-# Deploy (now.sh)
+# Deploy Heroku
 
-Deploy geoservice 
-
-        npm run now-deploy
+        git push heroku master
 
 
 ## Inspired by
