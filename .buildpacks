@@ -1,2 +1,2 @@
-web-back=https://github.com/heroku/heroku-buildpack-nodejs.git
-worker=https://github.com/heroku/heroku-buildpack-nodejs.git
+geoservice=https://github.com/heroku/heroku-buildpack-nodejs.git
+typeahead-component=https://github.com/heroku/heroku-buildpack-nodejs.git
